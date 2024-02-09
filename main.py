@@ -1,6 +1,5 @@
-import modules.database
-import modules.CSVed as CSVed
-import modules.JSONed as JSONed
+# main.py contains the code to start the Racktivity Program. It contains a menu for the user to choose the option they
+# want
 import modules.selection as selection
 import vars
 
@@ -15,14 +14,16 @@ print("______              _     _    _         _  _          \n"
       "                                                  __/ |\n"
       "                                                 |___/ \n")
 
+# Loops through the menu until the options are finished
 while True:
-    print("Please select an option:\n\n0: Exit\n1: Create a new table for your rack\n2: Print a rack table\n3: Remove"
-          " a rack table\n4: Add new rows to your rack\n5: Remove a row of information from a rack\n6: Input a single "
-          "server's information\n7: Display a single server's information\n8: Import from a CSV file\n")
-    print("Please select an option: ", end="")
-    userSelection = input()
+    userSelection = input("0: Exit\n1: Create a new table for your rack\n2: Remove a rack table\n3: Add new rows to "
+                          "your rack\n4: Remove a row of information from a rack\n5: Input a single server's "
+                          "information\n6: Import from a CSV file\n7: Output a single rack's information to a CSV file"
+                          "\n\nPlease select an option: ")
     print("")
     if userSelection == "0":
         break
     elif userSelection == "1":
         selection.createTable()
+    elif userSelection == "7":
+        selection.exportCSV()
