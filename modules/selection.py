@@ -1,6 +1,7 @@
 import vars
 import modules.tables as tables
 import modules.CSVed as CSVed
+import numpy as np
 
 
 # Creates a table and places it in the dictionary of Racks for a local copy
@@ -20,6 +21,9 @@ def createTable():
 
     # Then it creates a dataframe for the rack
     vars.racks[name] = tables.pandaTable(attributes, slots)
+
+    # It then changes the dataframe to start from slot number 1
+    vars.racks[name].index = np.arange(1, len(vars.racks[name]) + 1)
     print(vars.racks)
 
 
