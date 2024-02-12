@@ -24,6 +24,9 @@ def createTable():
 
     # It then changes the dataframe to start from slot number 1
     vars.racks[name].index = np.arange(1, len(vars.racks[name]) + 1)
+
+    # Then it flips indexes, so they are from the top to 1
+    vars.racks[name] = vars.racks[name].iloc[::-1]
     print(vars.racks)
 
 
